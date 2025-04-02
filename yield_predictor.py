@@ -18,9 +18,9 @@ import joblib
 
 # Load the trained CNN-MLP model and scaler
 try:
-    rend_model = load_model("model_cnn_mlp_l_0_r 0.974__.h5",
+    rend_model = load_model("CNN-MLP.h5",
                             custom_objects={'mse': mean_squared_error})
-    scaler = joblib.load("scaler_conditions.pkl") # Assuming you saved the scaler
+    scaler = joblib.load("scaler_mlp.pkl") # Assuming you saved the scaler
 except FileNotFoundError:
     st.error("Error: Model or scaler file not found. Please check the file paths.")
     st.stop()
