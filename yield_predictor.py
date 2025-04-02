@@ -39,10 +39,10 @@ flow_rate = st.number_input("Flow Rate (g/min)", min_value=0.0, max_value=100.0,
 
 # Input fields for molecule SMILES
 st.subheader("Molecule SMILES")
-mol1_smiles = st.text_input("SMILES for Molecule 1", "CCCCCCCC/C=C\CCCCCCCC(=O)O")
-mol2_smiles = st.text_input("SMILES for Molecule 2", "CCCCCCCCCCCCCCCCCCCCCC(=O)O")
-mol3_smiles = st.text_input("SMILES for Molecule 3", "CCCCCC/C=C\CCCCCCCCCC(=O)O")
-mol4_smiles = st.text_input("SMILES for Molecule 4", "CCCCCCCCCCCCCCCC(=O)O")
+mol1_smiles = st.text_input("SMILES for Molecule 1", "CCO")
+mol2_smiles = st.text_input("SMILES for Molecule 2", "CCC")
+mol3_smiles = st.text_input("SMILES for Molecule 3", "C=C")
+mol4_smiles = st.text_input("SMILES for Molecule 4", "O=O")
 
 # Function to generate Morgan Fingerprint
 def generate_fingerprint(smiles):
@@ -77,4 +77,4 @@ if st.button("Predict Yield"):
 
         # Display the prediction
         st.subheader("Prediction Result:")
-        st.success(f"The predicted yield is: {predicted_yield:.2f}%")
+        st.success(f"The predicted yield is: {predicted_yield:.2f} %")
