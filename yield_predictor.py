@@ -33,16 +33,16 @@ st.markdown("Enter the reaction conditions and molecule SMILES to predict the yi
 st.subheader("Reaction Conditions")
 time = st.number_input("Time (min)", min_value=0.0, max_value=910.0, value=120.0)
 temperature = st.number_input("Temperature (°C)", min_value=0.0, max_value=200.0, value=100.0)
-pressure = st.number_input("Pressure (MPa)", min_value=0.0, max_value=100.0, value=50)
+pressure = st.number_input("Pressure (MPa)", min_value=10.0, max_value=100.0, value=50.0)
 cosolvent = st.number_input("CoSolvent(W/W)", min_value=0.0, max_value=1.0, value=0.0)
 flow_rate = st.number_input("Flow Rate (g/min)", min_value=0.0, max_value=100.0, value=7.36)
 
 # Input fields for molecule SMILES
 st.subheader("Molecule SMILES")
-mol1_smiles = st.text_input("SMILES for Molecule 1", "CCO")
-mol2_smiles = st.text_input("SMILES for Molecule 2", "CCC")
-mol3_smiles = st.text_input("SMILES for Molecule 3", "C=C")
-mol4_smiles = st.text_input("SMILES for Molecule 4", "O=O")
+mol1_smiles = st.text_input("SMILES for Molecule 1", "CCCCCCCC/C=C\CCCCCCCC(=O)O")
+mol2_smiles = st.text_input("SMILES for Molecule 2", "CCCCCCCCCCCCCCCCCCCCCC(=O)O")
+mol3_smiles = st.text_input("SMILES for Molecule 3", "CCCCCC/C=C\CCCCCCCCCC(=O)O")
+mol4_smiles = st.text_input("SMILES for Molecule 4", "CCCCCCCCCCCCCCCC(=O)O")
 
 # Function to generate Morgan Fingerprint
 def generate_fingerprint(smiles):
